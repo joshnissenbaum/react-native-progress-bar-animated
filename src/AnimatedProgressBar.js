@@ -86,8 +86,8 @@ class ProgressBar extends React.Component {
                 }}
             >
                 <Image
-                    source={require("../../../assets/img/progress-fill.png")}
-                    style={{ position: "absolute", height: 5 }}
+                    source={this.props.progressBackgroundImage}
+                    style={{ position: "absolute", width: this.props.width }}
                 />
 
                 <Animated.View
@@ -116,6 +116,11 @@ ProgressBar.propTypes = {
     barEasing: PropTypes.oneOf(["bounce", "cubic", "ease", "sin", "linear", "quad"]),
     barAnimationDuration: PropTypes.number,
     backgroundAnimationDuration: PropTypes.number,
+
+    /**
+     * Custom bar image
+     */
+    progressBackgroundImage: Image.propTypes.source.isRequired,
 
     /**
      * StyleSheet props
